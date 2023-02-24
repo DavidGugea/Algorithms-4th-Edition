@@ -1,4 +1,4 @@
-package Chapter3.Chapter33.Research;
+package Chapter3.Chapter33.Research.RBT1;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -290,7 +290,10 @@ public class RBT {
         // Case 4 -> RIGHT-LEFT
         int[] values_case_4_0 = {10, 15, 12};
 
-        for (int i : values_case_4_0) {
+        // Arbitrary case
+        int[] values_arbitrary = {25, 10, 20, 5};
+
+        for (int i : values_arbitrary) {
             tree.insert(i);
         }
 
