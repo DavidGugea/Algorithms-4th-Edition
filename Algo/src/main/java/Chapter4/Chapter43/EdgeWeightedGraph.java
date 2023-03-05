@@ -40,4 +40,8 @@ public class EdgeWeightedGraph {
     public Iterable<Edge> adj(int v) {
         return map.get(v);
     }
+
+    public int V() {
+        return V;
+    }
 }
