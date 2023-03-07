@@ -84,6 +84,38 @@ public class Digraph {
         }
     }
 
+    public void topologicalSort(int startVertex) {
+        Stack<Integer> output = new Stack<>();
+        HashSet<Integer> visited = new HashSet<>();
+
+        topologicalSortRecursiveDFS(startVertex, output, visited);
+
+        while (output.size() != this.graph.keySet().size()) {
+            for (int w : this.graph.keySet()) {
+                if (!visited.contains(w)) {
+                    topologicalSortRecursiveDFS(w, output, visited);
+                }
+            }
+        }
+
+        for (int i : output) {
+            System.out.print(i + " - ");
+        }
+    }
+
+    public void topologicalSortRecursiveDFS(int vertex, Stack<Integer> output, HashSet<Integer> visited) {
+        for (int c : this.graph.get(vertex)) {
+            if (!visited.contains(c)) {
+                topologicalSortRecursiveDFS(c, output, visited);
+            }
+        }
+
+        if (!visited.contains(vertex)) {
+            output.push(vertex);
+            visited.add(vertex);
+        }
+    }
+
     public static void main(String[] args) {
         Digraph graph = new Digraph();
 
@@ -99,6 +131,10 @@ public class Digraph {
         graph.addEdge(3, 1);
         graph.addEdge(2, 3);
 
-        // graph.printGraph();
+        graph.printGraph();
+        System.out.println();
+        System.out.println("-----------------");
+        System.out.println();
+        graph.topologicalSort(0);
     }
 }
