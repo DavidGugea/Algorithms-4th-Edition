@@ -1,4 +1,4 @@
-package Chapter4.Chapter44;
+package Chapter4.Chapter44.Research;
 
 public class MaxHeap {
     private int[] array;
