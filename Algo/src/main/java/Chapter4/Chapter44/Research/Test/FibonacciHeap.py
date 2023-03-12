@@ -1,5 +1,5 @@
 """
-rank -> numbero f children of each node in a tree
+rank -> number of children of each node in a tree
 
 consolidate() -> refers to the process of merging trees of the same rank (trees with the same number of children). This is executed to maintain the heap structure after extracting the minimum element. 
 """
